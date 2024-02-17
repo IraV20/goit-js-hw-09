@@ -19,13 +19,14 @@ function onFormSubmit(e) {
     message,
   };
 
+  console.log(data);
   form.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
 
 function onFormInput() {
-  const email = form.elements.email.value;
-  const message = form.elements.message.value;
+  const email = form.elements.email.value.trim();
+  const message = form.elements.message.value.trim();
 
   const data = {
     email,
@@ -52,7 +53,7 @@ function loadFromLS(key) {
 function init() {
   const data = loadFromLS(STORAGE_KEY) || {};
 
-  form.elements.email.value = data.email || '';
-  form.elements.message.value = data.message || '';
+  form.elements.email.value = data.email.trim() || '';
+  form.elements.message.value = data.message.trim() || '';
 }
 init();

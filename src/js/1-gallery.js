@@ -90,7 +90,6 @@ function markup() {
 markup();
 
 const lightbox = new SimpleLightbox('.gallery a', {
-  captions: true,
   captionsData: 'alt',
   captionsDelay: 250,
 });
